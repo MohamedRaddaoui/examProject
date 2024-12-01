@@ -1,0 +1,23 @@
+{
+  "stages": [
+    {
+      "id": 2,
+      "titre": "Full ",
+      "description": "Stage",
+      "entreprise": "ESPRIT",
+      "disponible": true,
+      "nbrInteresse": 3
+    },
+    {
+      "id": 3,
+      "titre": "Test",
+      "description": "été",
+      "entreprise": "ESPRIT",
+      "disponible": true,
+      "nbrInteresse": 0
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

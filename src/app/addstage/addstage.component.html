@@ -1,0 +1,27 @@
+<form class="form-group" [formGroup]="formStage">
+    <label>Ref </label>
+    <input class="form-control" type="number" formControlName="id">
+    <div class="alert alert-danger" *ngIf="this.formStage.controls['id'].invalid &&
+     this.formStage.controls['id'].touched ">
+        <p *ngIf="formStage.controls['id'].getError('required')"> ref required</p>
+    </div>
+    <label>titre </label>
+    <input class="form-control" type="text" formControlName="titre">
+    <div class="alert alert-danger" *ngIf="this.formStage.controls['titre'].invalid && this.formStage.controls['titre'].touched ">
+        <p *ngIf="formStage.controls['titre'].getError('required')"> titre required</p>
+    </div>
+    <label>description </label>
+    <input class="form-control" type="text" formControlName="description">
+    <div class="alert alert-danger" *ngIf="this.formStage.controls['description'].invalid && this.formStage.controls['description'].touched ">
+        <p *ngIf="formStage.controls['description'].getError('required')"> description required</p>
+        <p *ngIf="formStage.controls['description'].getError('minlength')"> description doit contenir au moins 3 caracteres</p>
+    </div>
+    <label>entreprise </label>
+    <input class="form-control" type="text" formControlName="entreprise">
+    <div class="alert alert-danger" *ngIf="this.formStage.controls['entreprise'].invalid && this.formStage.controls['entreprise'].touched ">
+        <p *ngIf="formStage.controls['entreprise'].getError('required')"> entreprise required</p>
+        <p *ngIf="formStage.controls['entreprise'].getError('pattern')"> entreprise doit commencer par un majuscule</p>
+    </div>
+
+    <input type="submit" class="btn btn-primary mb-2" value="Ajouter" (click)="add()" [disabled]="formStage.invalid">
+</form>

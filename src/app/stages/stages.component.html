@@ -1,0 +1,15 @@
+<input type="text" name="" id="" [(ngModel)]="descStage">
+<div>
+    <ng-container *ngFor="let p of listStage let i=index ">
+        <ng-container *ngIf="p.description == descStage || descStage==null">
+    <div>
+                    <p class="card-text "> Ref: {{p.id}}</p>
+                    <p class="card-text "> Titre: {{p.titre}}</p>
+                    <p class="card-text "> Description: {{p.description}}</p>
+                    <p class="card-text "> Entreprise: {{p.entreprise}}</p>
+                    <p class="card-text "> NbrInteresse: {{p.nbrInteresse}}</p>
+                    <button class="btn btn-danger" (click)="deleteStage(p.id)">Delete</button>
+                    <button *ngIf="p.disponible == true" class="btn btn-danger" (click)="addInt(p.id)">intéresser</button>
+    </div>
+    </ng-container>
+    </ng-container>
